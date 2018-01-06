@@ -1,17 +1,28 @@
-$.getJSON("https://cpv2api.com/posts/published/j-w-v", function(resp){
-	if(resp.success){
-		for (var i = 0; i < resp.data.length; i++) { 
-    $('.posts ul').append('<li><a target="_blank" href="' + resp.data[i].link +'">' + resp.data[i].title + ' <span> ' +resp.data[i].views+ ' views</span> </a></li>');
-    }
-	}
-});
+$(document).ready(function(){
 
-$.getJSON("https://cpv2api.com/pens/showcase/j-w-v", function(resp){
-	if(resp.success){
-		for (var i = 0; i < 5; i++) { 
+var writing = { "posts":[
+    {"title":"Nothing Written by this estupit fellow<span class='new'>NEW</span>", "link":"http://www.vinitsingh.me"}, 
+    {"title":"Nothing Written by this estupit fellow<span class='new'> NOT NEW</span>", "link":"http://www.vinitsingh.me"}, 
+    {"title":"Nothing Written by this estupit fellow<span class='new'>FULLY STALE</span>", "link":"http://www.vinitsingh.me"}, 
+    {"title":"Nothing Written by this estupit fellow", "link":"http://www.vinitsingh.me"}, 
+    {"title":"Nothing Written by this estupit fellow<span class='new'>NOTHING RA</span>", "link":"http://www.vinitsingh.me"}, 
+    
+    //{"title":"25 'Learn To Code' Focused YouTube channels", "link":"https://www.j-w-v.com/writing/index.php/25-learn-to-code-focused-youtube-channels"}
+]
+}
+  
+
+for (var i = 0; i < writing.posts.length; i++) { 
+    $('.posts ul').append('<li><a href="' + writing.posts[i].link +'">' + writing.posts[i].title);
+    }
+
+
+$.getJSON("https://cpv2api.herokuapp.com/pens/showcase/nope----", function(resp){
+  if(resp.success){
+    for (var i = 0; i < 5; i++) { 
     $('.pens ul').append('<li><a target="_blank" href="' + resp.data[i].link +'">' + resp.data[i].title + ' <span> ' +resp.data[i].views+ ' views</span> </a></li>');
     }
-	}
+  }
 }); 
 
 
@@ -125,3 +136,6 @@ particlesJS("particles-js", {
   },
   "retina_detect": true
 });
+ 
+});
+
