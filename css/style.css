@@ -1,3 +1,4 @@
+@import url(https://fonts.googleapis.com/css?family=Titan+One);
 BODY {
     background: #282931;
     -webkit-font-smoothing: antialiased;
@@ -39,6 +40,10 @@ h2 {
     font-weight: bold;
     margin: 0px;
     padding: 0px;
+
+
+
+
 }
 
 h3 {
@@ -371,3 +376,18 @@ article li {
         font-size: 4rem;
     }
 }
+
+
+
+
+
+/* -------------------------------- */
+
+.cvtext{
+    position: relative;
+    text-align: right;
+    padding-right: 1%;
+    padding-top: 1%;
+}
+
+
